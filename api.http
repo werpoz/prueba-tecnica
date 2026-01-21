@@ -1,0 +1,18 @@
+### Get Latest Rates
+GET http://localhost:3000/forex/latest?base=USD&symbols=EUR,GBP,JPY
+
+### Get Historical Rates
+GET http://localhost:3000/forex/historical?date=2024-12-20&base=USD&symbols=EUR
+
+### Convert Currency
+POST http://localhost:3000/forex/convert
+Content-Type: application/json
+
+{
+  "from": "USD",
+  "to": "EUR",
+  "amount": 1000
+}
+
+### Error handling (missing date)
+GET http://localhost:3000/forex/historical?base=USD
